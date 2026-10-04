@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asteroid-validator"
+version = "0.1.0"
+description = "Synthetic benchmarks for physics-consistency ranking of asteroid reconstructions"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "Pillow>=10.0",
+]
+
+[project.scripts]
+asteroid-benchmark = "asteroid_validator.synthetic:main"
+asteroid-outline-match = "asteroid_validator.outline:main"
+asteroid-outline-view = "asteroid_validator.viewer:main"
+asteroid-calibrate-weights = "asteroid_validator.calibration:main"
+asteroid-meeting-demo = "asteroid_validator.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

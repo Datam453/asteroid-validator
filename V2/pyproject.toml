@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asteroid-validator-v2"
+version = "0.2.0"
+description = "CPU training of a physics-based asteroid geometric-error evaluator"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0", "Pillow>=10.0"]
+
+[project.scripts]
+asteroid-v2 = "asteroid_validator_v2.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
